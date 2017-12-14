@@ -1,12 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Essences:
+ Fire, house, mouse, car, spring.
 
 Things you may want to cover:
 
 * Ruby version
-
+  5.0.6
 * System dependencies
 
 * Configuration
