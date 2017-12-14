@@ -1,7 +1,8 @@
 # README
 
 Essences:
- Fire, house, mouse, car, spring.
+  User -- пользователь (может быть обычным или администратором)
+  Test -- сущность представляющая непосредственно сам тест
 
 Things you may want to cover:
 
