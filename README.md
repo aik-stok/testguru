@@ -1,12 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Essences:
+  User -- пользователь (может быть обычным или администратором)
+  Test -- сущность представляющая непосредственно сам тест
 
 Things you may want to cover:
 
 * Ruby version
-
+  5.0.6
 * System dependencies
 
 * Configuration
@@ -22,4 +23,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-# testguru
