@@ -20,32 +20,8 @@ User.create([
   },
 ])
 
-Category.create([
-  {
-   "title" => "Ruby"
-  },
-  {
-   "title" => "Rails"
-  },
-  {
-   "title" => "SQL"
-  }
-])
-
-Test.create([
-  {
-  "title" => "String methods",
-  "level" => 1
-  },
-  {
-  "title" => "Hash methods",
-  "level" => 1
-  },
-  {
-  "title" => "Commands",
-  "level" => 1
-  },
-  {
+Category.create(title: "Rails").tests.create([
+{
   "title" => "Rails methods",
   "level" => 2
   },
@@ -53,23 +29,22 @@ Test.create([
   "title" => "Rails structure",
   "level" => 2
   }
-])
+  ])
 
-Question.create([
-  {
-  "body" => "How to measure length of string?"
+Category.create(title: "Ruby").tests.create([
+{
+  "title" => "String methods",
+  "level" => 1
   },
   {
-  "body" => "How to capitalize length of string?"
-  },
-  {
-  "body" => "How to return values key?"
-  },
-  {
-  "body" => "How to create database from psql?"
-  },
-  {
-  "body" => "How to return all instances of class?"
+  "title" => "Hash methods",
+  "level" => 1
   }
-])
+  ])
+
+Test.find(1).questions.create(body: "How to return all instances of class?")
+Test.find(2).questions.create(body: "What is Rails Active Record?")
+Test.find(3).questions.create(body: "How to measure length of string?")
+Test.find(4).questions.create(body: "How to return values key?")
+Category.create(title: "SQL").tests.create(title: "Methods", level: 1).questions.create(body: "How to create database for psql?")
 

@@ -26,16 +26,20 @@ ActiveRecord::Schema.define(version: 20171217145141) do
   end
 
   create_table "questions", force: :cascade do |t|
+    t.integer  "test_id"
     t.text     "body",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
   create_table "tests", force: :cascade do |t|
-    t.string   "title",                  null: false
-    t.integer  "level",      default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "category_id"
+    t.string   "title",                   null: false
+    t.integer  "level",       default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["category_id"], name: "index_tests_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
