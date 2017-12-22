@@ -5,3 +5,45 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.create([
+  {
+  "name" => "Max"
+  },
+  {
+  "name" => "Alex"
+  },
+  {
+  "name" => "Lisa",
+  "admin" => true
+  }
+])
+
+Category.create(title: "Rails").tests.create([
+{
+  "title" => "Rails methods",
+  "level" => 2
+  },
+  {
+  "title" => "Rails structure",
+  "level" => 2
+  }
+  ])
+
+Category.create(title: "Ruby").tests.create([
+{
+  "title" => "String methods",
+  "level" => 1
+  },
+  {
+  "title" => "Hash methods",
+  "level" => 1
+  }
+  ])
+
+Test.find(1).questions.create(body: "How to return all instances of class?")
+Test.find(2).questions.create(body: "What is Rails Active Record?")
+Test.find(3).questions.create(body: "How to measure length of string?")
+Test.find(4).questions.create(body: "How to return values key?")
+Category.create(title: "SQL").tests.create(title: "Methods", level: 1).questions.create(body: "How to create database for psql?")
+
+User.first.assignments.create(test_id: Test.first.id)
