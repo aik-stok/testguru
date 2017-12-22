@@ -1,8 +1,9 @@
 class User < ApplicationRecord
 
-  has_many :tests
+  has_many :assignments
+  has_many :tests, through: :assignments
 
   def tests_for_user(level)
-    Test.where(level: level)
+    self.tests.where(level: level)
   end
 end

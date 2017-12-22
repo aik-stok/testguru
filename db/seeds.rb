@@ -7,17 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create([
   {
-  "name" => "Max",
-  "admin" => false
+  "name" => "Max"
   },
   {
-  "name" => "Alex",
-  "admin" => false
+  "name" => "Alex"
   },
   {
   "name" => "Lisa",
   "admin" => true
-  },
+  }
 ])
 
 Category.create(title: "Rails").tests.create([
@@ -48,3 +46,4 @@ Test.find(3).questions.create(body: "How to measure length of string?")
 Test.find(4).questions.create(body: "How to return values key?")
 Category.create(title: "SQL").tests.create(title: "Methods", level: 1).questions.create(body: "How to create database for psql?")
 
+User.first.assignments.create(test_id: Test.first.id)

@@ -3,9 +3,8 @@ class Test < ApplicationRecord
   belongs_to :category
   has_many :questions
 
-  def self.belongs_to_category(name)
-    arr = []
-    Category.find_by(title: name).tests.order('title DESC').each {|test|arr << test.title}
-    arr
-  end
+  def self.tests_from_category(name)
+    tests = Test.joins("JOIN categories ON tests.category_id = categories.id").where("categories.title = ? ", name).order("tests.title DESC")
+    (tests.empty?) ? nil : tests.pluck(:title)
+    end
 end
