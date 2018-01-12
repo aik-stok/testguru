@@ -6,7 +6,7 @@ class Test < ApplicationRecord
   has_many :assignments
   has_many :users, through: :assignments
 
-  def self.tests_from_category(name)
-    Test.joins("JOIN categories ON tests.category_id = categories.id").where("categories.title = ? ", name).order("tests.title DESC").tests.pluck(:title)
-  end
+  
+  scope :from_category, -> (name)  {joins("JOIN categories ON tests.category_id = categories.id").where("categories.title = ? ", name).order("tests.title DESC").pluck(:title)}
+
 end
