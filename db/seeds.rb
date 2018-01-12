@@ -49,7 +49,7 @@ Test.find(1).questions.create(body: "How to return all instances of class?")
 Test.find(2).questions.create(body: "What is Rails Active Record?")
 Test.find(3).questions.create(body: "How to measure length of string?")
 Test.find(4).questions.create(body: "How to return values key?")
-Category.create(title: "SQL").tests.create(title: "Methods", level: 1, author_id: 3).questions.create(body: "How to create database for psql?")
+Category.create(title: "SQL").tests.create(title: "Methods", level: 6, author_id: 3).questions.create(body: "How to create database for psql?")
 
 User.first.assignments.create(test_id: Test.first.id)
 
