@@ -52,3 +52,6 @@ Test.find(4).questions.create(body: "How to return values key?")
 Category.create(title: "SQL").tests.create(title: "Methods", level: 1, author_id: 3).questions.create(body: "How to create database for psql?")
 
 User.first.assignments.create(test_id: Test.first.id)
+
+Question.first.answers.create(body: "Ask Santa")
+Question.second.answers.create(body: "ORM", correct: true)
