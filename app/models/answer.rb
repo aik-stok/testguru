@@ -1,8 +1,8 @@
 class Answer < ApplicationRecord
   validates :body, presence: true
-  validate :max_quantity, on: :create
+  validate :validate_max_quantity
 
-  def max_quantity
+  def validate_max_quantity
     if  question.answers.size >= 4 
       errors.add(:quantity, "You cannot have more than 4 answers.")
     end
