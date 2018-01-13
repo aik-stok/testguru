@@ -4,7 +4,7 @@ class Answer < ApplicationRecord
 
   def max_quantity
     if  question.answers.size >= 4 
-      errors.add("You cannot have more than 4 answers.")
+      errors.add(:quantity, "You cannot have more than 4 answers.")
     end
   end
 
