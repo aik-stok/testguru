@@ -1,4 +1,6 @@
 class Test < ApplicationRecord
+  validates :title, presence: true, uniqueness: {scope: :level}
+  validates :level, numericality: { only_integer: true }
 
   belongs_to :category
   belongs_to :author, class_name: "User"
@@ -6,7 +8,13 @@ class Test < ApplicationRecord
   has_many :assignments
   has_many :users, through: :assignments
 
-  def self.tests_from_category(name)
-    Test.joins("JOIN categories ON tests.category_id = categories.id").where("categories.title = ? ", name).order("tests.title DESC").tests.pluck(:title)
+  scope :easy, -> {where(level: 0..1)}
+  scope :intermediate, -> {where(level: 2..4)}
+  scope :hard, -> {where(level: 5..Float::INFINITY)}
+  scope :from_category, -> (name)  {joins(:category).where("categories.title = ? ", name)}
+  
+  def self.category_titles(name)
+    from_category(name).order("tests.title DESC").pluck(:title)
   end
+
 end
