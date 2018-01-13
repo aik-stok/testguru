@@ -29,6 +29,11 @@ Category.create(title: "Rails").tests.create([
   "title" => "Rails structure",
   "level" => 2,
   "author_id" => 3
+  },
+  {
+  "title" => "Rails structure",
+  "level" => 2,
+  "author_id" => 3
   }
   ])
 
@@ -54,4 +59,6 @@ Category.create(title: "SQL").tests.create(title: "Methods", level: 6, author_id
 User.first.assignments.create(test_id: Test.first.id)
 
 Question.first.answers.create(body: "Ask Santa")
+Question.first.answers.create(body: "Ask Santa")
+
 Question.second.answers.create(body: "ORM", correct: true)
