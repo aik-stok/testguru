@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index create new]
-  before_action :find_question, only: %i[show]
+  before_action :find_question, only: %i[show edit update]
 
   def index
     @questions = @test.questions
@@ -22,9 +22,20 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def edit
+  end
+  
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @question = Question.find(params[:id]).destroy
-    render plain: 'Deleted!'
+    redirect_to @question.test
   end
 
   private
@@ -38,6 +49,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
+    p params
     params.require(:question).permit(:body)
   end
 end
