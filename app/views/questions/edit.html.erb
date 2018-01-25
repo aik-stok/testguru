@@ -1,8 +1,1 @@
-<h1><%= question_header %></h1>
-<%= form_with model: @question, local: true do |f| %>
-  <%= render 'shared/errors', resource: @question %>
-  <%= f.label :question %>
-  <%= f.text_field :body, id: :body %>
-
-  <%= f.submit "Update question" %>
-<% end %>
+<%= render 'shared/form_for_questions' %>
