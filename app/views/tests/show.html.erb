@@ -3,4 +3,12 @@
 <p><%= link_to "New Question", "#{params[:id]}/questions/new" %>
 <p><%= link_to "Back to Tests", tests_path %>
 <p><h2>Questions</h2>
-<%= render partial: 'questions/question', collection: @questions %>
+<table>
+  <tr>
+    <th>Body</th>
+    <th colspan="2">Actions</th>
+  
+
+  <%= render @test.questions %>
+  </tr>
+</table>
