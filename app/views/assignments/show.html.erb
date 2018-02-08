@@ -1,0 +1,21 @@
+<h1>Pass the <%= @assignment.test.title %> Test</h1>
+<p>
+  <h2>Question 
+    <%= @assignment.test.questions.index(@assignment.current_question) + 1%> /
+    <%= @assignment.test.questions.count %>
+  </h2>
+</p>
+
+<b>
+  <%= @assignment.current_question.body %>
+</b>
+
+<%= form_with url: assignment_path(@assignment), local: true, method: :put do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @assignment.current_question.answers, :id, :body, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+  <% end %>
+  <p><%= form.submit 'Next' %></p>
+<% end %>
