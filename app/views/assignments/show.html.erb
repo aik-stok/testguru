@@ -1,8 +1,7 @@
 <h1>Pass the <%= @assignment.test.title %> Test</h1>
 <p>
   <h2>Question 
-    <%= @assignment.test.questions.index(@assignment.current_question) + 1%> /
-    <%= @assignment.test.questions.count %>
+    <%= question_number %>
   </h2>
 </p>
 
