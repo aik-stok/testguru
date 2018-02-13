@@ -7,14 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create([
   {
-  "name" => "Max"
+  "name" => "Max",
+  "email" => "max@yahoo.com"
   },
   {
-  "name" => "Alex"
+  "name" => "Alex",
+  "email" => "alex@gmail.com"
   },
   {
   "name" => "Lisa",
-  "admin" => true
+  "admin" => true,
+  "email" => "lisa@tut.by"
   }
 ])
 
