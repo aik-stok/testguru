@@ -45,7 +45,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    p params
     params.require(:question).permit(:body)
   end
 end

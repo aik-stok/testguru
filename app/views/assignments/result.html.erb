@@ -1,0 +1,9 @@
+<h1> Test "<%= @assignment.test.title %>" was completed.</h1>
+<p>
+  <h2>
+    Result:<font class="<%= result_message_class @assignment %>">
+    <%= @assignment.percent_of %> % </font>of answers was correct. 
+    <%= result_message @assignment %>.
+  </h2>
+</p>
+<p><%= link_to "Back to Tests", tests_path %></p>
