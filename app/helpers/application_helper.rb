@@ -9,6 +9,8 @@ module ApplicationHelper
   end
 
   def flash_message
-    content_tag :p, flash[:alert], class: 'flash alert' if flash[:alert]
+    flash.map do |message_type, message|
+      content_tag(:p, message, class: "flash #{message_type}") if flash[:alert]
+    end.join.html_safe
   end
 end
