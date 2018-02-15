@@ -10,7 +10,7 @@
 
   <body>
     <% if logged_in? %>
-      <p class="nav user">Welcome <b><%= current_user.name %></b></p>
+      <p class="nav user">Welcome <b><%= current_user.name %>  <%= link_to 'Logout', logout_path %></b></p>
     <% end %>
     <%= yield %>
         <%= render'layouts/footer' %>
