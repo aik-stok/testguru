@@ -9,9 +9,7 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <p class="nav user">Welcome <b><%= current_user.name %>  <%= link_to 'Logout', logout_path %></b></p>
-    <% end %>
+    <%= render 'layouts/header' %>
     <%= yield %>
         <%= render'layouts/footer' %>
   </body>
