@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  get 'users/new'
+
 
   root 'tests#index'
+  get :login, to: 'sessions#new'
+  get :signup, to: 'users#new'
+
+  resources :sessions, only: :create
+  resources :users, only: :create
+
   resources :tests do
     member do
       post :start
@@ -10,6 +16,7 @@ Rails.application.routes.draw do
       resources :answers, shallow: true, except: :index
     end
   end
+  
   resources :assignments, only: %i[show update] do
     member do
       get :result
