@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to cookies[:last_page] 
+      cookies[:last_page] = nil
     else
       flash.now[:alert] = "Enter login and password"
       render 'new'
