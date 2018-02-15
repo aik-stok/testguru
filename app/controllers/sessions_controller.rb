@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path 
+      redirect_to cookies[:last_page] 
     else
       flash.now[:alert] = "Enter login and password"
       render 'new'

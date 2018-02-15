@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
  before_action :authenticate_user!
   protect_from_forgery with: :exception
- 
-  
   
   helper_method :current_user,
                 :logged_in? 
@@ -11,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user! 
     unless current_user
+      cookies[:last_page] = request.original_url
       redirect_to login_path
     end
   end
