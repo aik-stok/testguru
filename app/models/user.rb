@@ -2,6 +2,8 @@ require 'digest/sha1'
 
 class User < ApplicationRecord
 
+  validates :email, presence: true, uniqueness: true
+
   has_many :assignments
   has_many :tests, through: :assignments
   has_many :created_tests, class_name: "Test", foreign_key: "author_id"
