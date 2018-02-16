@@ -17,7 +17,7 @@ class Assignment < ApplicationRecord
   end
 
   def percent_of
-    (correct_answers_sum / all_correct_answers.to_f * 100.0).round
+    (correct_answers_sum / all_correct_answers.to_f * 100.0).to_i
   end
   
   def success?

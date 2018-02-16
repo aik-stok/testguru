@@ -1,7 +1,6 @@
 class TestsController < ApplicationController
 
   before_action :set_test, only: %i[show edit update destroy start ]
-  before_action :set_user, only: :start
   before_action :find_questions, only: %i[show]
   def index
     @tests = Test.all
@@ -11,8 +10,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
-    redirect_to @user.test_passage(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
   def new
@@ -29,7 +28,4 @@ class TestsController < ApplicationController
     @questions = @test.questions
   end
 
-  def set_user
-    @user = @current_user
-  end
 end

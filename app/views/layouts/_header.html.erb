@@ -4,14 +4,13 @@
         <%= link_to "TestGuru", root_path, id: "logo" %>
           <% if logged_in? %>
             <div class="nav user">Welcome <b><%= current_user.name %></div></b>
+              <ul class="nav navbar-nav navbar-right">
+                <%= content_tag(:li, (link_to 'Logout', logout_path)) %>
+              </ul>
+          <% else %>
+              <ul class="nav navbar-nav navbar-right">
+                <%= content_tag(:li, (link_to "Register", signup_path))  if @current_user.nil? %>
+              </ul>
           <% end %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   root_path %></li>
-            <%= content_tag(:li, (link_to "Register", signup_path))  if @current_user.nil? %></li>
-            <li><%= log_in_out %></li>
-          </ul>
-
-        </nav>
       </div>
     </header>
