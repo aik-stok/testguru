@@ -6,5 +6,5 @@
 </p>
 <p><b>Correct: </b><%= @answer.correct %></p>
 
-<%= link_to 'Edit', edit_answer_path(@answer) %> |
-<%= link_to 'Back', @answer.question %>
+<%= link_to 'Edit', edit_admin_answer_path(@answer) %> |
+<%= link_to 'Back', [:admin, @answer.question] %>

@@ -3,4 +3,4 @@
 <p><%= @question.body %>
 <%= render 'form_for_answer', answer: @answer %>
 
-<%= link_to 'Back', @answer.question %>
+<%= link_to 'Back', [:admin, @answer.question] %>

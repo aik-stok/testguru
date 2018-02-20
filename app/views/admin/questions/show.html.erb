@@ -1,0 +1,9 @@
+<h1><%= @question.test.title %> Question</h1>
+<p><%= @question.body %>
+<p><%= link_to 'Destroy',  [:admin, @question],  method: :delete, data: { confirm: 'Are you sure?' } %>
+<p><%= link_to 'Back to test', [:admin, @question.test] %>
+<p><%= link_to 'New Answer', new_admin_question_answer_path(@question) %>
+<p><h2>Answers</h2>
+<ol>
+<%= render @question.answers %>
+</ol>
