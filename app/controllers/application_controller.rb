@@ -8,7 +8,7 @@ protected
 
 def after_sign_in_path_for(resource)
   flash[:success] = "Привет, #{current_user.name}"
-  if resource.admin
+  if resource.class == Admin
     admin_tests_path 
   else
     root_path 
