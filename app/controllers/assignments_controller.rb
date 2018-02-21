@@ -3,8 +3,6 @@ class AssignmentsController < ApplicationController
   before_action :set_test_passage, only: %i[show update result]
 
   def show
-    @question_number = @assignment.test.questions.index(@assignment.current_question) + 1
-    @question_quantity = @assignment.test.questions.count
   end
 
   def result

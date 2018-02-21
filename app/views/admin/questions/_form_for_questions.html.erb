@@ -1,5 +1,5 @@
 <h1><%= question_header(@question) %></h1>
-<%= form_with model: [@test, @question], local: true do |f| %>
+<%= form_with model: [:admin, @test, @question], local: true do |f| %>
   <%= render 'shared/errors', resource: @question %>
 
   <%= f.label :question %>
@@ -8,4 +8,4 @@
   <%= f.submit %>
 <% end %>
 
-<%= link_to 'Back to tests', tests_path %>
+<%= link_to 'Back to tests', admin_tests_path %>

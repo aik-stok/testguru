@@ -2,14 +2,14 @@
       
       <div class="container">
         <%= link_to "TestGuru", root_path, id: "logo" %>
-          <% if logged_in? %>
-            <div class="nav user">Welcome <b><%= current_user.name %></div></b>
+          <% if user_signed_in? %>
+            <div class="nav user">Welcome <b><%= current_user.first_name %></div></b>
               <ul class="nav navbar-nav navbar-right">
-                <%= content_tag(:li, (link_to 'Logout', logout_path)) %>
+                <%= content_tag(:li, (link_to 'Logout', destroy_user_session_path, method: :delete)) %>
               </ul>
           <% else %>
               <ul class="nav navbar-nav navbar-right">
-                <%= content_tag(:li, (link_to "Register", signup_path))  if @current_user.nil? %>
+                <%= content_tag(:li, (link_to "Register", new_user_registration_path))  if @current_user.nil? %>
               </ul>
           <% end %>
       </div>

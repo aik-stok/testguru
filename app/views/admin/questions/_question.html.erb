@@ -1,0 +1,13 @@
+
+  <tr bgcolor= "<%= cycle('grey', 'white') %>">
+    <td>
+      <dl>
+        <dt><%= link_to "#{question.body}", admin_question_path  %>
+          <td>
+            <%= link_to 'Destroy',  admin_question_path,  method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Edit',  edit_admin_question_path(question) %>
+          </td>
+        </dt>
+     </dl>
+    </td>
+  </tr>
