@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
 
 protected
 
-def after_sign_in_path_for(resource)
-  flash[:success] = "Привет, #{current_user.name}"
-  if resource.class == Admin
+def after_sign_in_path_for(user)
+  flash[:success] = "Привет, #{current_user.first_name}"
+  if user.admin?
     admin_tests_path 
   else
     root_path 
@@ -19,6 +19,6 @@ end
   
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :last_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
   end
 end
