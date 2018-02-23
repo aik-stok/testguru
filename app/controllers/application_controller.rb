@@ -7,9 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :different_locale?
 
   def different_locale?
-    if I18n.locale != I18n.default_locale
-      define_singleton_method(:default_url_options) {{lang: I18n.locale}}
-    end
+    define_singleton_method(:default_url_options) {{lang: I18n.locale}} if I18n.locale != I18n.default_locale
   end
 
   private
