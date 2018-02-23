@@ -1,5 +1,8 @@
 ---
 ru:
+  layouts:
+    header:
+      register: "Регистрация"
   activerecord:
     errors:
       messages:
@@ -265,3 +268,5 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
+  success_flash_message: " ответов правильно. Success"
+  fail_flash_message: " ответов правильно. Провал"

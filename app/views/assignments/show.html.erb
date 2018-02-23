@@ -1,4 +1,4 @@
-<h1>Pass the <%= @assignment.test.title %> Test</h1>
+<h1><%= t('.header', title: @assignment.test.title) %></h1>
 <p>
   <h2>Question 
     <%= question_number %>
