@@ -268,5 +268,5 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
-  success_flash_message: " ответов правильно. Success"
+  success_flash_message: " ответов правильно. Успех"
   fail_flash_message: " ответов правильно. Провал"

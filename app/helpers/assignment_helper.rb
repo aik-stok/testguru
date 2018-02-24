@@ -10,9 +10,9 @@ module AssignmentHelper
 
   def result_message(assignment)
     if assignment.success?
-      t(:success_flash_message)
+      t("success_flash_message")
     else
-      t(:fail_flash_message)
+      t("fail_flash_message")
     end
   end
 

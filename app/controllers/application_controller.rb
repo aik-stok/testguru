@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   protect_from_forgery with: :exception
   before_action :set_locale
-  before_action :different_locale?
 
-  def different_locale?
-    define_singleton_method(:default_url_options) {{lang: I18n.locale}} if I18n.locale != I18n.default_locale
+
+  def default_url_options
+    I18n.locale != I18n.default_locale ? {lang: I18n.locale } : {}
   end
 
   private
