@@ -1,4 +1,10 @@
 ru:
+  layouts:
+    header:
+      welcome: "Добро пожаловать <b>%{name}</b>"
+      sign_in: "Вход"
+      sign_up: "Регистрация"
+      logout: "Выход"
   admin:
     tests:
       index:
