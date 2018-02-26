@@ -8,6 +8,7 @@ module ApplicationHelper
     link_to "#{repo}", "https://github.com/#{author}/#{repo}", target: :_blank
   end
 
+# helper insted partial for flash messages
   def flash_message
     flash.map do |message_type, message|
       content_tag(:p, message, class: "alert alert-#{message_type}")
