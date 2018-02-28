@@ -22,4 +22,8 @@ module ApplicationHelper
       link_to "Log in", login_path
     end
   end
+
+  def user_nav_theme
+    (current_user.admin?) ? "navbar navbar-light bg-warning " : "navbar navbar-light bg-light"
+  end
 end

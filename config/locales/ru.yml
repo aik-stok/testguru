@@ -2,6 +2,7 @@
 ru:
   layouts:
     header:
+      admin_panel: "Панель администратора"
       register: "Регистрация"
   activerecord:
     errors:

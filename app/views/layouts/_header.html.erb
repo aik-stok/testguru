@@ -1,9 +1,14 @@
 <header>
-  <nav class="navbar navbar-light bg-light">
-    <%= link_to "TestGuru", root_path, class: "navbar-brand" %>
+  <nav class="<%= user_nav_theme %>">
+    <a class="navbar-brand" href="<%= root_path %>">
+      <%= image_tag "1.png", size:"30x30" %>
+      Testguru
+    </a>
+
     <span class="navbar-text">
       <% if user_signed_in? %>
-         <%= t(".welcome", name: current_user.first_name).html_safe %> |
+        <%= t(".welcome", name: current_user.first_name).html_safe %> |
+        <%=  link_to(t( ".admin_panel"), admin_tests_path) if current_user.admin?%> |
         <%= link_to t(".logout", default: "Logout"), destroy_user_session_path, method: :delete %>
       <% else %>
         <%= link_to t(".sign_in", default: "Sign in"), new_session_path(resource_name) %> |
