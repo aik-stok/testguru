@@ -10,9 +10,9 @@ module AssignmentHelper
 
   def result_message(assignment)
     if assignment.success?
-      "Success"
+      t("success_flash_message")
     else
-      "Test failed"
+      t("fail_flash_message")
     end
   end
 

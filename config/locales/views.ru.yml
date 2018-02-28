@@ -1,0 +1,22 @@
+ru:
+  admin:
+    tests:
+      index:
+        header: 'Тесты'
+        title: 'Название'
+        level: 'Уровень'
+        questions: 'Вопросы'
+        actions: 'Действие'
+  tests:
+    index:
+      header: 'Тесты'
+      title: 'Название'
+      level: 'Уровень'
+      questions: 'Вопросы'
+      actions: 'Действие'
+  assignments:
+    show:
+      header: "Прохождение Теста %{title}"
+    result:
+      header: "Вы завершили Тест %{title}"
+  hello: "Здароу мир!"

@@ -7,10 +7,6 @@
               <ul class="nav navbar-nav navbar-right">
                 <%= content_tag(:li, (link_to 'Logout', destroy_user_session_path, method: :delete)) %>
               </ul>
-          <% else %>
-              <ul class="nav navbar-nav navbar-right">
-                <%= content_tag(:li, (link_to "Register", new_user_registration_path))  if @current_user.nil? %>
-              </ul>
           <% end %>
       </div>
     </header>

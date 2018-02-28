@@ -1,0 +1,22 @@
+en:
+  admin:
+    tests:
+      index:
+        header: 'Tests'
+        title: 'Title'
+        level: 'Level'
+        questions: 'Questions'
+        actions: 'Actions'
+  tests:
+    index:
+      header: 'Tests'
+      title: 'Title'
+      level: 'Level'
+      questions: 'Questions'
+      actions: 'Actions'
+  assignments:
+    show:
+      header: "Pass the %{title} Test"
+    result:
+      header: "You have completed %{title} Test"
+  hello: "Hello world"
