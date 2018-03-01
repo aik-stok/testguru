@@ -24,6 +24,6 @@ module ApplicationHelper
   end
 
   def user_nav_theme
-    (current_user.admin?) ? "navbar navbar-light bg-warning " : "navbar navbar-light bg-light"
+    (user_signed_in? && current_user.admin?) ? "navbar navbar-light bg-warning " : "navbar navbar-light bg-light"
   end
 end

@@ -4,7 +4,7 @@ ru:
       welcome: "Добро пожаловать <b>%{name}</b>"
       sign_in: "Вход"
       sign_up: "Регистрация"
-      logout: "Выход"
+      logout: 'Выход <i class="fa fa-sign-out"></i>'
   admin:
     tests:
       index:

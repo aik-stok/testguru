@@ -2,7 +2,7 @@
 ru:
   layouts:
     header:
-      admin_panel: "Панель администратора"
+      admin_panel: 'Панель администратора <i class="fa fa-edit"></i>'
       register: "Регистрация"
   activerecord:
     errors:
