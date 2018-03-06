@@ -1,0 +1,4 @@
+ru:
+  gist_form: '{"description": "Вопрос %{title} из TestGuru","public": true,"files": {"testguru_question.txt": {"content": "%{content}"}}}'
+en:
+  gist_form: '{"description": "A question about %{title} from TestGuru","public": true,"files": {"testguru_question.txt": {"content": "%{content}"}}}'

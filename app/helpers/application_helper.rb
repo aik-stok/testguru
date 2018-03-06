@@ -23,6 +23,10 @@ module ApplicationHelper
     end
   end
 
+  def strip_hash(url)
+    URI(url).path
+  end
+
   def user_nav_theme
     (user_signed_in? && current_user.admin?) ? "navbar navbar-light bg-warning " : "navbar navbar-light bg-light"
   end
