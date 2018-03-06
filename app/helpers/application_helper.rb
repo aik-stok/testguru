@@ -8,9 +8,10 @@ module ApplicationHelper
     link_to "#{repo}", "https://github.com/#{author}/#{repo}", target: :_blank
   end
 
+# helper insted partial for flash messages
   def flash_message
     flash.map do |message_type, message|
-      content_tag(:p, message, class: "flash #{message_type}")
+      content_tag(:p, message, class: "alert alert-#{message_type}")
     end.join.html_safe
   end
 
@@ -20,5 +21,9 @@ module ApplicationHelper
     else
       link_to "Log in", login_path
     end
+  end
+
+  def user_nav_theme
+    (user_signed_in? && current_user.admin?) ? "navbar navbar-light bg-warning " : "navbar navbar-light bg-light"
   end
 end

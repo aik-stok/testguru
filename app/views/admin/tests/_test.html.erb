@@ -1,10 +1,8 @@
 
-<tr bgcolor= "<%= cycle('grey', 'white') %>">
-      <td><%= link_to "#{test.title}", [:admin, test] %></td>
-      <td><%= test.level %></td>
-      <td><%= test.questions.count %></td>
-      <td><%= link_to "Edit", edit_admin_test_path(test) %></td>
-      <td><%= link_to 'Destroy',  [:admin, test] ,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <td><%= button_to "Start", start_test_path(test) %></td>
-      
+<tr bgcolor= "<%= cycle('white', '#f2f2f2') %>">
+  <td><%= link_to "#{test.title}", [:admin, test] %></td>
+  <td><%= test.level %></td>
+  <td><%= test.questions.count %></td>
+  <td><%= link_to "Edit", edit_admin_test_path(test) %></td>
+  <td><%= link_to 'Destroy',  [:admin, test] ,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>

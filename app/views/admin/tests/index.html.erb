@@ -1,11 +1,19 @@
-<h1><%=t('.header')%></h1>
-<%= link_to "New Test", new_admin_test_path %>
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.questions') %></th>
-    <th colspan="4"><%= t('.actions') %></th>
-  </tr>
-<%= render @tests %>
-</table>
+<div class="mt-4">
+  <h1><%= t('.header')%></h1>
+  <div class="row justify-content-center mt-3">
+    <%= link_to "New Test", new_admin_test_path, class: "p-3" %>
+    <table class="table">
+
+      <thead class="thead-dark">
+        <tr>
+          <th><%= t('.title') %></th>
+          <th><%= t('.level') %></th>
+          <th><%= t('.questions') %></th>
+          <th colspan="4"><%= t('.actions') %></th>
+        </tr>
+      </thead>
+
+    <%= render @tests %>
+    </table>
+  </div>
+</div>

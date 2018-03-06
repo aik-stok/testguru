@@ -1,7 +1,7 @@
 
-<tr bgcolor= "<%= cycle('grey', 'white') %>">
-      <td><%= test.title %></td>
-      <td><%= test.level %></td>
-      <td><%= test.questions.count %></td>
-      <td><%= button_to "Start", start_test_path(test) %></td>
-</tr>
+  <tr bgcolor= "<%= cycle('white', '#f2f2f2') %>">
+    <td><%= test.title %></td>
+    <td><%= test.level %></td>
+    <td><%= test.questions.count %></td>
+    <td><%= button_to "Start", start_test_path(test), class: "btn btn-secondary " %></td>
+  </tr>
