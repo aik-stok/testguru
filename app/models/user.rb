@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :email, :first_name, presence: true
   validates_uniqueness_of :email
 
+  has_many :gists
   has_many :assignments
   has_many :tests, through: :assignments
   has_many :created_tests,  class_name: "Test", foreign_key: "author_id"

@@ -1,0 +1,5 @@
+ru:
+  gist_description: "Вопрос %{title} из TestGuru"
+
+en:
+  gist_description: "A question about %{title} from TestGuru"
