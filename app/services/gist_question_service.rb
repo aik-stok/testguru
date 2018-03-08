@@ -18,13 +18,21 @@ class GistQuestionService
   private
 
   def gist_params
-    I18n.t("gist_form", title: @test.title, content: gist_content)
+        {
+      "description": I18n.t("gist_description", title: @test.title),
+      "public": true,
+      "files": {
+        "testguru_question.txt": {
+          "content": gist_content
+        }
+      }
+    }
   end
 
   def gist_content
     content = [@question.body]
     content += @question.answers.pluck(:body)
-    content.join(" ")
+    content.join("\n")
   end
 
 end 

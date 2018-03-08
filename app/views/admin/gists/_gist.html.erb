@@ -1,6 +1,6 @@
 
 <tr bgcolor= "<%= cycle('white', '#f2f2f2') %>">
   <td><%= link_to truncate(gist.question.body,length: 25), [:admin, gist.question] %></td>
-  <td><%= link_to strip_hash(gist.url), gist.url %></td>
+  <td><%= link_to strip_hash(gist.url), "https://gist.github.com/#{gist.url}", target: :_blank %></td>
   <td><%= gist.user.email %></td>
 </tr>
