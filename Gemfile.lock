@@ -67,6 +67,10 @@ GEM
       responders
       warden (~> 1.2.3)
     devise-i18n-views (0.3.7)
+    dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
     erubi (1.7.0)
     execjs (2.7.0)
     faraday (0.14.0)
@@ -202,6 +206,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.0)
   devise-i18n-views
+  dotenv-rails
   faraday
   font-awesome-rails
   jbuilder (~> 2.5)
