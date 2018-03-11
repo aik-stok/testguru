@@ -9,8 +9,9 @@ function checkPasswordMatch() {
 	if (password != confirmPassword) {
 		$("#check-password-match").html("Passwords do not match!")
 		$(this).css("color","red")
-  } else {
+    } 
+      else {
 		$("#check-password-match").html("Passwords match.")
 		$(this).css("color","green")
-  }
+    }
 }
