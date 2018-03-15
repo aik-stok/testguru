@@ -7,6 +7,8 @@ en:
         level: 'Level'
         questions: 'Questions'
         actions: 'Actions'
+      form_inline:
+        submit: 'Сохранить'
   tests:
     index:
       header: 'Tests'

@@ -1,5 +1,6 @@
-$(document).ready(function () {
-	$("#user_password_confirmation").keyup(checkPasswordMatch);
+document.addEventListener('turbolinks:load', function() {
+	var input = document.querySelector('#user_password_confirmation')
+	if (input) { input.addEventListener('keyup', checkPasswordMatch) }
 })
 
 function checkPasswordMatch() {
