@@ -9,5 +9,6 @@
   <td class="align-middle">
     <%= link_to "Edit", edit_admin_test_path(test), data: {test_id: test.id}, class: "form-inline-link" %>
   </td>
+  <td class="align-middle"><%= link_to 'Show',  admin_test_path(test) %></td>
   <td class="align-middle"><%= link_to 'Destroy',  [:admin, test] ,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>
