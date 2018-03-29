@@ -5,7 +5,7 @@ class Test < ApplicationRecord
   validates :category, presence: true
 
   belongs_to :category, optional: true
-  belongs_to :author, class_name: "User"
+  belongs_to :author, class_name: "User", :foreign_key => 'user_id'
   has_many :questions
   has_many :assignments
   has_many :users, through: :assignments
