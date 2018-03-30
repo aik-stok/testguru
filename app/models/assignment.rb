@@ -23,6 +23,10 @@ class Assignment < ApplicationRecord
   def success?
     percent_of > 85
   end
+  
+  def progress_percent
+   ((test.questions.index(current_question) + 1) / test.questions.count.to_f * 100.0).round
+  end
 
   private
   

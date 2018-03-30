@@ -1,0 +1,9 @@
+<div class="progress">
+  <%= content_tag :div,
+      content_tag(:span, "#{@assignment.progress_percent} %", class: "text-align: center;" ),
+      class: "progress-bar",
+      "role" => "progressbar",
+      "aria-valuenow" => "#{@assignment.progress_percent}",
+      "aria-valuemin" => "0", "aria-valuemax" => "100",
+      "style" => "width: #{@assignment.progress_percent}%" %>
+</div>
