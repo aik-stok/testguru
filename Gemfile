@@ -24,7 +24,6 @@ gem 'devise', '~> 4.0'
 gem 'devise-i18n-views'
 gem 'faraday'
 gem "octokit", "~> 4.0"
-gem 'sqlite3'
 
 group :development, :test do
   gem 'byebug', platform: :mri
