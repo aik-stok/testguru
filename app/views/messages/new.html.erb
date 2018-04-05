@@ -1,0 +1,33 @@
+
+<%= form_with(url: 'contact', model: @message, local: true) do |f| %>
+  <% if @message.present? && @message.errors.present? %>
+    <%= content_tag :div, class: 'resource-errors' do %>
+      <h2>
+        <%= pluralize @message.errors.count, 'error' %> detected:
+      </h2>
+      <ul>
+        <%	@message.errors.full_messages.each do |message| %>
+           <li> <%= message %> </li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message %><br />
+    <%= f.text_field :body %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
