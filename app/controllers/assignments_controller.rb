@@ -1,16 +1,13 @@
 class AssignmentsController < ApplicationController
 
   before_action :set_assignment, only: %i[show update result gist]
-  before_action :set_badge_assignment, only: %i[result]
+  before_action :set_badge_assignment, only: %i[ update]
 
   def show
   end
 
   def result
-    if @assignment.success?
-      rules_array = @badge_assignment.check_all_rules(current_user, @assignment.test_id.to_i)
-      current_user.badges.push(Badge.where(rule:[rules_array]))
-    end
+    @badges = Badge.where(rule: params[:badges]) if @assignment.success?
   end
 
   def gist
@@ -27,8 +24,12 @@ class AssignmentsController < ApplicationController
   def update
     @assignment.accept! params[:answer_ids]
     if @assignment.completed?
-      @assignment.update(completed: true) if @assignment.success?
-      redirect_to result_assignment_path(@assignment)
+       if @assignment.success?
+         @assignment.update(completed: true)
+         @rules_array = @badge_assignment.check_all_rules(current_user, @assignment.test_id.to_i)
+         current_user.badges.push(Badge.where(rule:[@rules_array]))
+       end
+      redirect_to result_assignment_path(@assignment, badges: @rules_array)
     else
       render 'show'
     end 

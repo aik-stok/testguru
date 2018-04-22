@@ -1,0 +1,23 @@
+<div class="mt-4" >
+  <h1><%= t('.header')%></h1>
+  <div class="row justify-content-center mt-3">
+    <%= link_to "New Badge", new_admin_badge_path, class: "p-3" %>
+    
+    <%= render 'shared/errors', resource: @badge %>
+    
+    <table class="table">
+        <tr>
+          <th class="sort-by-title pointer">
+          <%= t('.title') %>
+          <%= octicon 'arrow-up', class: 'text-success hide' %>
+          <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>
+          <th>Rule#</th>
+          <th colspan="4"><%= t('.actions') %></th>
+        </tr>
+      </thead>
+
+    <%= render @badges %>
+    </table>
+  </div>
+</div>

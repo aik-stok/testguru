@@ -1,0 +1,12 @@
+<h2> Title: <%= @badge.title %> </h2>
+<h2> Level: <%= @badge.rule %> </h2>
+<p><%= link_to "New Question", "#{params[:id]}/questions/new" %>
+<p><%= link_to "Back to badges", admin_badges_path %>
+<p><h2>Questions</h2>
+<table>
+  <tr>
+    <th>Body</th>
+    <th colspan="2">Actions</th>
+  
+  </tr>
+</table>

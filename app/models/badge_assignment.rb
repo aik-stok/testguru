@@ -1,7 +1,7 @@
 class BadgeAssignment < ApplicationRecord
 
- belongs_to :user
- belongs_to :badge
+  belongs_to :user
+  belongs_to :badge
 
   def check_all_rules(current_user, test_id)
     array = []

@@ -1,0 +1,11 @@
+<% @badges.each do |badge| %>
+<div class="achievement-banner mt-3">
+	<div class="achievement-icon">
+    <span class="icon"><span class="icon-trophy"><%= image_tag("test_complete.png", size: '50') %></span></span>
+	</div>
+	<div class="achievement-text">
+		<p class="achievement-notification">Achievement unlocked</p>
+		<p class="achievement-name"><%= badge.title %></p>
+	</div>
+</div>
+<% end %>

@@ -8,6 +8,8 @@
     <span class="navbar-text">
       <% if user_signed_in? %>
         <%= t(".welcome", name: current_user.first_name).html_safe %> |
+        <%=  link_to( "My Badges", badges_path).html_safe %> |
+        <%=  link_to( "Manage badges".html_safe, admin_badges_path) if current_user.admin?%> |
         <%=  link_to(t( ".admin_panel").html_safe, admin_tests_path) if current_user.admin?%> |
         <%= link_to t(".logout", default: "Logout").html_safe, destroy_user_session_path, method: :delete %>
       <% else %>

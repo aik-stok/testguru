@@ -1,0 +1,13 @@
+
+<tr bgcolor= "<%= cycle('white', '#f2f2f2') %>">
+  <td>
+  <%= content_tag :span, badge.title, class: "badge-title", data: {badge_id: badge.id} %>
+  <%= render 'form_inline', badge: badge == @badge ? @badge : badge %>
+  </td>
+  <td class="align-middle"><%= badge.rule %></td>
+  <td class="align-middle">
+    <%= link_to "Edit", edit_admin_badge_path(badge), data: {badge_id: badge.id}, class: "form-inline-link" %>
+  </td>
+  <td class="align-middle"><%= link_to 'Show',  admin_badge_path(badge) %></td>
+  <td class="align-middle"><%= link_to 'Destroy',  [:admin, badge] ,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

@@ -1,0 +1,22 @@
+<%= form_with(model: [:admin, @badge], local: true) do |f| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rule %><br />
+    <%= f.label :rule, "From first try!", :value => "1"  %>
+    <%= f.radio_button :rule, true %>
+    <%= f.label :rule, "All from Rails", :value => "2"  %>
+    <%= f.radio_button :rule, true %>
+    <%= f.label :rule, "All from intermediate level", :value => "3" %>
+    <%= f.radio_button :rule, false %>
+    <%= f.label :rule, "All comleted!", :value => "4"  %>
+    <%= f.radio_button :rule, true, :checked => true %>
+  </div>
+
+    <%= f.submit %>
+<% end %>

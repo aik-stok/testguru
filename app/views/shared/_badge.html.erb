@@ -1,0 +1,13 @@
+<% @badges.each do |badge| %>
+  <div class="card-deck mt-3" style="width: 14rem;">
+    <div class="card">
+      <%= image_tag("test_complete.png", size: '50') %>
+      <div class="card-body">
+        <h5 class="card-title"><%= badge.title %></h5>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><%= badge.created_at.localtime.strftime("%Y-%m-%d %H:%M:%S") %></small>
+      </div>
+    </div>
+  </div>
+<% end %>

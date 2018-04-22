@@ -9,7 +9,9 @@ class Assignment < ApplicationRecord
   scope :complete, -> {where(completed: true)}
 
   def accept!(answer_ids)
-    self.correct_answers_sum += correct_answers.where(id: answer_ids).count
+    unless (answer_ids.map(&:to_i) - correct_answers.pluck(:id)).any?
+      self.correct_answers_sum += correct_answers.where(id: answer_ids).count 
+    end
     save!
   end 
 

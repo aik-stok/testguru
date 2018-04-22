@@ -15,6 +15,8 @@ Rails.application.routes.draw do
  #   end
   end
   
+  resources :badges, only: :index
+  
   resources :assignments, only: %i[show update] do
     member do
       get :result
@@ -24,6 +26,9 @@ Rails.application.routes.draw do
   
   namespace :admin do
     resources :gists, only: :index
+    resources :badges do
+      patch :update_inline, on: :member
+    end
     resources :tests do
       patch :update_inline, on: :member
       resources :questions, shallow: true, except: :index do
