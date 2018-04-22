@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :assignments
   has_many :tests, through: :assignments
   has_many :created_tests,  class_name: "Test"
+  has_many :badge_assignments
+  has_many :badges, through: :badge_assignments
 
 
   def tests_for_user(level)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329100607) do
+ActiveRecord::Schema.define(version: 20180420120647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,12 +29,29 @@ ActiveRecord::Schema.define(version: 20180329100607) do
     t.integer "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "correct_questions", default: 0
     t.bigint "current_question_id"
     t.integer "correct_answers_sum", default: 0
+    t.boolean "completed", default: false
     t.index ["current_question_id"], name: "index_assignments_on_current_question_id"
     t.index ["test_id"], name: "index_assignments_on_test_id"
     t.index ["user_id"], name: "index_assignments_on_user_id"
+  end
+
+  create_table "badge_assignments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_badge_assignments_on_badge_id"
+    t.index ["user_id"], name: "index_badge_assignments_on_user_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title"
+    t.string "img_path"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "rule"
   end
 
   create_table "categories", id: :serial, force: :cascade do |t|
