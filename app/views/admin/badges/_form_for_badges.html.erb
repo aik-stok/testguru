@@ -8,14 +8,14 @@
 
   <div class="field">
     <%= f.label :rule %><br />
-    <%= f.label :rule, "From first try!", :value => "1"  %>
-    <%= f.radio_button :rule, true %>
-    <%= f.label :rule, "All from Rails", :value => "2"  %>
-    <%= f.radio_button :rule, true %>
-    <%= f.label :rule, "All from intermediate level", :value => "3" %>
-    <%= f.radio_button :rule, false %>
-    <%= f.label :rule, "All comleted!", :value => "4"  %>
-    <%= f.radio_button :rule, true, :checked => true %>
+    <%= f.label :rule, "From first try!"  %>
+    <%= f.radio_button :rule, "1" %>
+    <%= f.label :rule, "All from Rails"  %>
+    <%= f.radio_button :rule, "2" %>
+    <%= f.label :rule, "All from intermediate level"   %>
+    <%= f.radio_button :rule, "3" %>
+    <%= f.label :rule, "All comleted!" %>
+    <%= f.radio_button :rule, "4", :checked => true %>
   </div>
 
     <%= f.submit %>
